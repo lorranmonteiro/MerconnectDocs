@@ -1,2 +1,7 @@
-# merconnect-docs
-Mercadapp Development Documentation
+# Mercadapp Development Documentation
+
+## PADRÃO DE CORES
+
+## TESTES
+
+## DEPLOY
