@@ -126,7 +126,7 @@ Após a aprovação de ambos revisores, o *Pull Request* deve ser marcado com a 
 Atualmente fazemos os deploys de novas funcionalidades todas as terças e quintas.
 Antes de lançarmos as atualizações em produção, devemos seguir alguns passos:
 
-### - Pré-deploy
+### Pré-deploy
 
 1. Todas as branches com as alterações devem ser mergeadas na branch principal `develop` após serem **devidamente testadas**. Atualmente estamos fazendo um Pull Request da `develop` para a `master` para fazermos uma verificação manual de tudo o que irá subir;
 
@@ -148,7 +148,7 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 
 4. Após o termino do deploy, aguardar o tempo de pré-boot (3-4 minutos) e prosseguir para os passos pós-deploy.
 
-### - Pós-Deploy
+### Pós-Deploy
 
 1. **Fazer um pedido**. Entrar em algum app, fazer todo o fluxo normal do cliente e finalizar o pedido. Verificar se o pedido apareceu no Merconnect corretamente. Se possível, fazer o pedido tanto em um app iOS quanto no Android;
 2. Caso houver alguma mudança envolvendo pagamento, testar o mesmo, principalmente se for no pagamento online;
@@ -158,6 +158,6 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 6. Fazer um push das alterações da branch `master` para o remoto ou mergear a develop com a master diretamente pelo GitHub;
 7. Mover os cards que foram para produção para `DONE` no [Jira](https://mercadapp.atlassian.net/jira/software/projects/MAPP/boards/1).
 
-### - Problemas no Deploy
+### Problemas no Deploy
 
 Caso ocorra algum problema no deploy, é necessário fazer uma avaliação. Caso a correção seja simples, pode-se fazer na mesma hora sem muitos problemas, a menos que envolva os pedidos. Caso a correção seja complicada ou o problema não seja identificado, recomenda-se fazer o **rollback imediato** e adiar o deploy até a correção ser feita e testada novamente.
