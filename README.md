@@ -138,7 +138,7 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 
 5. Caso a nova versão tiver migrations que alterem a estrutura já existente no Merconnect, é recomendado que seja feito um snapshot do banco. Para fazer isso, acesse a [AWS](https://console.aws.amazon.com/rds/home?region=us-east-1#databases:), selecione o database `merconnect-production-db-r`, clique no botão `Actions` e selecione `Take snapshot`.
 
-### - Deploying
+### Deploying
 
 1. Localmente, puxe as atualizações mais recentes das branches `develop` e `master` com o comando `git pull`, mudando de branch com o comando `git checkout nome_da_branch`;
 
