@@ -43,6 +43,7 @@ pg_restore -d merconnect_development -h localhost -p 5432 -U nome_do_seu_usuári
 ```
 
 &nbsp;
+
 &nbsp;
 
 ## **Testes**
@@ -97,6 +98,7 @@ Para testar batches, é recomendado que baixe algum aquivo pré-existênte de ba
 Já sobre os emails, em ambiente de desenvolvimento estes serão abertos diretamente no seu navegador padrão. Já em ambiente de testes, a gem `letter_opener` irá redirecionar todos os emails para o email especificado pela ENV `EMAIL_INTERCEPTOR`, caso setado.
 
 &nbsp;
+
 &nbsp;
 
 ## **Revisões**
@@ -117,6 +119,7 @@ Após a revisão ser finalizada, sendo ela aprovada ou não, cabe ao revisor des
 Após a aprovação de ambos revisores, o *Pull Request* deve ser marcado com a label `READY TO DEPLOY` para assinalar que está pronta para ser mergeada na `develop`, juntamente com a movimentação do card no board do  [Jira](https://mercadapp.atlassian.net/jira/software/projects/MAPP/boards/1) para o campo **READY TO DEPLOY**.
 
 &nbsp;
+
 &nbsp;
 
 ## **Manual do Deploy**
