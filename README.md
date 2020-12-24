@@ -2,20 +2,22 @@
 
 Esta é a documensão relativa ao Merconnect, servidor da [Mercadapp](https://www.mercadapp.com.br/) que faz o gerenciamento de todos os supermercados cadastrados e se comunica com os aplicativos e sites.
 
-#### Stack
+### Stack
 - Ruby on Rails (versão 4.2.10)
 - Ruby (versão 2.5.7)
 - Postgres 12.4
 
-#### APIs
-As documentações das APIs do Merconnect estão disponíveis [aqui](https://www.postman.com/api-documentation-tool/).
+### APIs
+As documentações das APIs do Merconnect estão disponíveis [aqui](https://web.postman.co/workspace/76123c49-6796-4902-8f73-17c43cecf9d7/overview?ctx=documentation).
 
-#### Style Guides
+### Style Guides
 
 - Rails: [Robocop Rails Style Guide](https://github.com/rubocop-hq/rails-style-guide)
 - Ruby: [Airbnb Ruby Style Guide](https://github.com/airbnb/ruby)
 - Javascript: [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - CSS: [Airbnb CSS/Sass Style Guide](https://github.com/airbnb/css)
+
+&nbsp;
 
 ## **Primeiros Passos**
 
@@ -38,10 +40,12 @@ Coloque-o em uma pasta de fácil acesso, navegue pelo terminal até a pasta em q
 pg_restore -d merconnect_development -h localhost -p 5432 -U nome_do_seu_usuário -n public --clean --no-owner -x --no-privileges --role=nome_do_seu_usuário_do_postgres --verbose dump.sql 
 ```
 
+&nbsp;
+
 ## **Testes**
 Em todas as novas funcionalidades, o ideal é que sejam feitos os testes manuais e automatizados para os mesmos. Aqui citamos os testes básicos que devemos nos atentar ao implementarmos funcionalidades e refatorações no Merconnect.
 
-#### Testes automatizados
+### Testes automatizados
 
 Para começar a rodar os testes, basta rodar o seguinte comando para criar o *database* de testes:
 ```
@@ -58,7 +62,7 @@ Também podemos rodar o teste para um único arquivo, exemplo:
 rake test test/integration/batches_test.rb
 ```
 
-#### Testes manuais
+### Testes manuais
 
 Além dos testes automatizados, também é importante que nos atentemos para testes básicos para maximizar a boa experiência do usuário e evitar desentendimentos, abertura de chamados e inconsistências. 
 
@@ -89,6 +93,8 @@ Para testar batches, é recomendado que baixe algum aquivo pré-existênte de ba
 ##### Emails
 Já sobre os emails, em ambiente de desenvolvimento estes serão abertos diretamente no seu navegador padrão. Já em ambiente de testes, a gem `letter_opener` irá redirecionar todos os emails para o email especificado pela ENV `EMAIL_INTERCEPTOR`, caso setado.
 
+&nbsp;
+
 ## **Revisões**
 Possuimos um processo de revisão técnica das novas funcionalidades. Primeiramente o responsável pela tarefa deve fazer um *pull request* mirando para a `develop`, depois solicitar a revisão e assinalar, dentro do PR, dois desenvolvedores para fazer a revisão das mudanças. É recomendado que as pessoas assinaladas sejam as que tenham mais afinidade com as partes que foram adicionadas/alteradas e/ou fizeram alguma alteração no código em que tiveram as alterações (o próprio GitHub tem esse sistema de recomendação com base no histórico).
 
@@ -105,6 +111,8 @@ Ao criar o *Pull Request*, verifique se as mudanças necessitam de alguma label 
 Após a revisão ser finalizada, sendo ela aprovada ou não, cabe ao revisor desassinalar ela mesma dos `Assignees` e assinalar o responsável pela branch que deve analisar os comentários feitos pelo revisor, caso houver. **O ciclo se mantêm até que os dois revisores do *Pull Request* tiverem aprovado as mudanças**.
 
 Após a aprovação de ambos revisores, o *Pull Request* deve ser marcado com a label `READY TO DEPLOY` para assinalar que está pronta para ser mergeada na `develop`, juntamente com a movimentação do card no board do  [Jira](https://mercadapp.atlassian.net/jira/software/projects/MAPP/boards/1) para o campo **READY TO DEPLOY**.
+
+&nbsp;
 
 ## **Manual do Deploy**
 Atualmente fazemos os deploys de novas funcionalidades todas as terças e quintas.
