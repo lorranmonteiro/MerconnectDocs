@@ -136,7 +136,7 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 
 4. Verifique o [Heroku Status](https://status.heroku.com/) checando se os status de `Apps`, `Data` e `Tools` estão todos `OK` e verdes. Caso contrário, é recomendado que o deploy seja adiado para evitar problemas.
 
-5. Caso a nova versão tiver migrations que alterem a estrutura já existente no Merconnect, é recomendado que seja feito um snapshot do banco. Para fazer isso, acesse a AWS [aqui](https://console.aws.amazon.com/rds/home?region=us-east-1#databases:), selecione o database `merconnect-production-db-r`, clique no botão `Actions` e selecione `Take snapshot`.
+5. Caso a nova versão tiver migrations que alterem a estrutura já existente no Merconnect, é recomendado que seja feito um snapshot do banco. Para fazer isso, acesse a [AWS](https://console.aws.amazon.com/rds/home?region=us-east-1#databases:), selecione o database `merconnect-production-db-r`, clique no botão `Actions` e selecione `Take snapshot`.
 
 ### - Deploying
 
