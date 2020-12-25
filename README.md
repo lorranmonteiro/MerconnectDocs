@@ -134,9 +134,9 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 
 3. A branch `develop` deve ser enviada para o [Ambiente de Testes](https://merconnect-staging.herokuapp.com/), sendo necessário entrar nas telas dos pedidos e em locais em que houveram atualizações recentes com novas funcionalidades e/ou refatorações, por último fazendo um pedido pelo aplicativo de teste e verificar se o pedido foi feito com sucesso;
 
-4. Verifique o [Heroku Status](https://status.heroku.com/) checando se os status de `Apps`, `Data` e `Tools` estão todos `OK` e verdes. Caso contrário, é recomendado que o deploy seja adiado para evitar problemas.
+4. Caso a nova versão tiver migrations que alterem a estrutura já existente no Merconnect, é recomendado que seja feito um snapshot do banco. Para fazer isso, acesse a [AWS](https://console.aws.amazon.com/rds/home?region=us-east-1#databases:), selecione o database `merconnect-production-db-r`, clique no botão `Actions` e selecione `Take snapshot`. O processo leva em média 20 minutos, sendo recomendado fazer um pouco antes do horário do Deploy, geralmente 22:00.
 
-5. Caso a nova versão tiver migrations que alterem a estrutura já existente no Merconnect, é recomendado que seja feito um snapshot do banco. Para fazer isso, acesse a [AWS](https://console.aws.amazon.com/rds/home?region=us-east-1#databases:), selecione o database `merconnect-production-db-r`, clique no botão `Actions` e selecione `Take snapshot`.
+5. Verifique o [Heroku Status](https://status.heroku.com/) checando se os status de `Apps`, `Data` e `Tools` estão todos `OK` e verdes. Caso contrário, é recomendado que o deploy seja adiado para evitar problemas.
 
 ### Deploying
 
@@ -144,7 +144,7 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 
 2. Dentro da branch `master`, faça o merge da `develop` com o comando `git merge develop`.
 
-3. Por último, suba a branch `master` para staging (se ainda não feito), e logo após para produção com o comando `git push production master`. Dependendo se tiver migrations grandes ou novos assets, o tempo de deploy poderá variar de 3 a 10 minutos. Acompanhar a execução do deploy até a sua conclusão;
+3. Por último, suba a branch `master` para produção com o comando `git push production master`. Dependendo se tiver migrations grandes ou novos assets, o tempo de deploy poderá variar de 3 a 10 minutos. Acompanhar a execução do deploy até a sua conclusão;
 
 4. Após o termino do deploy, aguardar o tempo de pré-boot (3-4 minutos) e prosseguir para os passos pós-deploy.
 
@@ -160,4 +160,4 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 
 ### Problemas no Deploy
 
-Caso ocorra algum problema no deploy, é necessário fazer uma avaliação. Caso a correção seja simples, pode-se fazer na mesma hora sem muitos problemas, a menos que envolva os pedidos. Caso a correção seja complicada ou o problema não seja identificado, recomenda-se fazer o **rollback imediato** e adiar o deploy até a correção ser feita e testada novamente.
+Caso ocorra algum problema no deploy, é necessário fazer uma avaliação. Caso a correção seja simples, pode-se fazer na mesma hora sem muitos problemas, a menos que envolva os pedidos. Caso a correção seja complicada ou o problema não seja identificado, recomenda-se fazer o **rollback imediato** [aqui](https://dashboard.heroku.com/apps/merconnect/activity){:target="_blank"} para a versão estável mais próxima e adiar o deploy até a correção ser feita e testada novamente.
