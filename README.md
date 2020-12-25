@@ -160,4 +160,4 @@ Antes de lançarmos as atualizações em produção, devemos seguir alguns passo
 
 ### Problemas no Deploy
 
-Caso ocorra algum problema no deploy, é necessário fazer uma avaliação. Caso a correção seja simples, pode-se fazer na mesma hora sem muitos problemas, a menos que envolva os pedidos. Caso a correção seja complicada ou o problema não seja identificado, recomenda-se fazer o **rollback imediato** [aqui](https://dashboard.heroku.com/apps/merconnect/activity) <a href="http://example.com/" target="_blank">Hello, world!</a> para a versão estável mais próxima e adiar o deploy até a correção ser feita e testada novamente.
+Caso ocorra algum problema no deploy, é necessário fazer uma avaliação. Caso a correção seja simples, pode-se fazer na mesma hora sem muitos problemas, a menos que envolva os pedidos. Caso a correção seja complicada ou o problema não seja identificado, recomenda-se fazer o **rollback imediato** [aqui](https://dashboard.heroku.com/apps/merconnect/activity) para a versão estável mais próxima e adiar o deploy até a correção ser feita e testada novamente.
